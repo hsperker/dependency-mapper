@@ -1,0 +1,209 @@
+
+.diagram_pane {
+    overflow: hidden;
+    min-height: 100vh;
+    background-color: #353A47;
+}
+
+.info_pane {
+    float: right;
+    width: 400px;
+    min-height: 100vh;
+    background-color: #353A47;
+    padding-top: 10px;
+
+    display: flex;
+}
+
+#dependent_systems {
+    height: 250px;
+    overflow: scroll;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex_column {
+    display: flex;
+    flex-flow: column;
+}
+
+.max_width {
+    width: 100%;
+}
+
+#info_row {
+    margin-bottom: 5px;
+}
+
+#dependent_systems_pane {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 30%;
+    overflow: scroll;
+}
+
+#dependent_data_pane {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    flex-grow: 1;
+    overflow-y: auto;
+    height: 0px;
+}
+
+.hidden_divider {
+    height: 20px;
+}
+
+.collection {
+    margin: 0px;
+}
+
+.pane_title {
+    padding-left: 24px;
+    padding-bottom: 5px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.system_info {
+    font-size: 12px;
+    font-weight: 300;
+    color: gray;
+}
+
+.data_direction {
+    float: left;
+    margin-right: 15px;
+}
+
+#clean_selected_dependent_system {
+    bottom: unset;
+    right: 35px;
+    background-color: rgb(70, 120, 220);
+    display: none;
+}
+
+#add_dependent_data {
+    bottom: unset;
+    right: 35px;
+    z-index: 100;
+    background-color: rgb(240, 0, 244);
+    display: none;
+}
+
+#add_node_to_diagram {
+    bottom: 10px;
+    left: -60px;
+    background-color: rgb(240, 0, 244);
+}
+
+#open_diagram_data {
+    bottom: unset;
+    top: 10px;
+    left: -60px;
+    background-color: rgb(149, 64, 231);
+}
+
+#save_diagram_data {
+    bottom: unset;
+    top: 60px;
+    left: -60px;
+    background-color: rgb(4, 166, 211);
+}
+
+.remove_dependent_data {
+    position: absolute;
+    right: 10px;
+}
+
+#selected_system {
+    display: none;
+}
+
+#selected_system_ghost {
+    background-color: #eee;
+    border-radius: 3px;
+    margin-top: 6px;
+    height: 18px;
+}
+
+#dependent_system_ghost {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+#dependent_system_ghost > span {
+    display: block;
+    background-color: #eee;
+    border-radius: 5px;
+    height: 12px;
+    margin-top: 14px;
+    margin: 16px;
+    margin-left: 0px;
+}
+
+#dependent_data_ghost .first_span {
+    display: block;
+    background-color: #eee;
+    margin-left: 40px;
+    border-radius: 5px;
+    height: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 50px;
+}
+
+#dependent_data_ghost .second_span {
+    display: block;
+    background-color: #eee;
+    margin-left: 40px;
+    border-radius: 5px;
+    height: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 120px;
+}
+
+#dependent_data_ghost .data_direction {
+    width: 24px;
+    height: 24px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+#dependent_data_ghost .delete{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: #eee;
+    border-radius: 50%;
+    margin-left: 258px;
+    margin-right: 0px;
+}
+
+.collection a.collection-item {
+    color: rgba(0,0,0,0.87);
+}
+
+.selected_system {
+    background-color: #ddd !important;
+}
+
+.add_node_modal {
+    z-index: 10;
+    top: 30%;
+    width: 400px;
+}
+
+.add_dependency_modal {
+    z-index: 10;
+    top: 30%;
+    width: 400px;
+}
+
+.data_direction_radio {
+    margin-left: 10px;
+    position: absolute;
+}

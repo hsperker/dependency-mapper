@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link href="material-design-icons-3.0.1/iconfont/material-icons.css" rel="stylesheet" /> 
+    
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+    <link href="main.css" rel="stylesheet" /> 
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+  </head>
+
+  <body>
+        <div class="modal add_node_modal">
+            <div class="modal-content">
+                <h5>Create New Node</h5>
+                <div class="input-field">
+                    <input id="new_node_name" type="text" class="validate">
+                    <label for="new_node_name">Node Name</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="waves-effect waves-red btn-flat" id="cancle_add_node">Cancle</a>
+                <a href="#!" class="waves-effect waves-green btn-flat" id="add_node">Add</a>
+            </div>
+        </div>
+
+        <div class="modal add_dependency_modal">
+                <div class="modal-content">
+                    <h5>Create New Data Exchange</h5>
+                    <div class="row">
+                        <div class="input-field s12">
+                            <select id="node_selection">
+                                <option value="-1" disabled selected>Choose your option</option>
+                                <!--
+                                <option class="remote_node" value="1">Option 1</option>
+                                -->
+                            </select>
+                            <label>Remote Node</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="s12">
+                            <p>
+                                <label>
+                                    <input name="data_direction" value="in" type="radio" />
+                                    <span>
+                                        Incoming
+                                    </span>
+                                    <i class="material-icons data_direction_radio">flight_land</i>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input name="data_direction" value="out" type="radio" />
+                                    <span>
+                                        Outgoing
+                                    </span>
+                                    <i class="material-icons data_direction_radio">flight_takeoff</i>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="input-field s12">
+                            <input id="new_data" type="text" class="validate">
+                            <label for="new_data">Data To Be Exchanged</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="waves-effect waves-red btn-flat" id="cancle_add_dependency">Cancle</a>
+                    <a href="#!" class="waves-effect waves-green btn-flat" id="add_dependency">Add</a>
+                </div>
+            </div>
+            
+        <div class="info_pane">
+            <div class="row flex max_width" id="info_row">
+                <div class="col s12 flex max_width">
+                    <div class="card max_width flex_column">
+                        <a class="btn-floating halfway-fab waves-effect waves-light" id="open_diagram_data"><i class="material-icons">folder</i></a>
+                        <a class="btn-floating halfway-fab waves-effect waves-light" id="save_diagram_data"><i class="material-icons">save</i></a>
+                        <a class="btn-floating halfway-fab waves-effect waves-light" id="add_node_to_diagram"><i class="material-icons">add</i></a>
+                        <div class="card-content">
+                            <span class="card-title" id="selected_system" data-selected-system-id="">Selected System</span>
+                            <span class="card-title" id="selected_system_ghost">&nbsp;</span>
+                        </div>
+
+                        <div class="pane_title">
+                            Dependent Systems
+                            <a class="btn-floating halfway-fab waves-effect waves-light" id="clean_selected_dependent_system"><i class="material-icons">undo</i></a>
+                        </div>
+                        <div class="card-content" id="dependent_systems_pane">
+                            <div class="collection">
+                                <a href="#!" class="collection-item" id="dependent_system_ghost">
+                                    <span>&nbsp;</span>
+                                </a>
+                                <!--
+                                <a href="#!" class="collection-item">Alvin</a>
+                                -->
+                            </div>
+                        </div>
+                        
+                        <div class="hidden_divider"></div>
+                        <div class="pane_title">
+                            Exchanged Data
+                            <a class="btn-floating halfway-fab waves-effect waves-light" id="add_dependent_data"><i class="material-icons">add</i></a>
+                        </div>
+                        <div class="card-content" id="dependent_data_pane">
+                            <ul class="collection">
+                                <li class="collection-item" id="dependent_data_ghost">
+                                    <div class="data_direction"></div>
+                                    <div class="delete"></div>
+                                    <div>
+                                        <span class="first_span">&nbsp;</span>
+                                    </div>
+                                    <div class="system_info">
+                                        <span class="second_span">&nbsp;</span>
+                                    </div>
+                                </li>
+                                <!--
+                                <li class="collection-item">
+                                    <div class="data_direction"><i class="material-icons">flight_land</i></div>
+                                    <div>
+                                        Alvin
+                                        <a class="waves-effect waves-red btn-flat remove_dependent_data"><i class="material-icons">delete</i></a>
+                                    </div>
+                                    <div class="system_info">
+                                        asdf
+                                    </div>
+                                </li>
+                                <li class="collection-item">
+                                    <div class="data_direction"><i class="material-icons">flight_takeoff</i></div>
+                                    <div>
+                                        Alvin
+                                        <a class="waves-effect waves-red btn-flat remove_dependent_data"><i class="material-icons">delete</i></a>
+                                    </div>
+                                    <div class="system_info">
+                                        asdf
+                                    </div>
+                                </li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="hidden_divider"></div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <div class="diagram_pane" id="viz"></div>
+
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+        <script type="text/javascript" src="d3.v5.min.js"></script>
+        <script>window.$ = window.jQuery = require('./jquery-3.4.1.min.js');</script>
+        <script type="text/javascript" src="visualization.js"></script>
+        <script type="text/javascript" src="control.js"></script>
+  </body>
+</html>

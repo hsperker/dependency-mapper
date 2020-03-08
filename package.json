@@ -1,0 +1,12 @@
+{
+  "name": "dependencymanager",
+  "version": "0.1.0",
+  "main": "index.js",
+  "productName": "Dependency Mapper",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^7.1.2"
+  }
+}
